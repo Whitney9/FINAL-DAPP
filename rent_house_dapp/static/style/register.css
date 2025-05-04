@@ -37,14 +37,14 @@ input {
    border: none;
    border-radius: 20px;
    margin: 5px 0;
-   background-color: #5ca062;
+   background-color: #133060;
    color: white;
    font-weight: bold;
    font-size: 16px;
    cursor: pointer;
 }
 .button:hover {
-   background-color: #4b8a5c;
+   background-color: hsl(243, 100%, 50%);
 }
 .gender-input {
    position: relative;
