@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, jsonify
 from werkzeug.security import check_password_hash
-from carbon_wallet_flask.models.user import User
+from rent_house_dapp.models.user import User
 
 login = Blueprint('login', __name__)
 

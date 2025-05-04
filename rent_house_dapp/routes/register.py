@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, jsonify
 from werkzeug.security import generate_password_hash
-from carbon_wallet_flask.models.user import User
-from carbon_wallet_flask.models import db
+from rent_house_dapp.models.user import User
+from rent_house_dapp.models import db
 from datetime import datetime
 
 register = Blueprint('register', __name__)
