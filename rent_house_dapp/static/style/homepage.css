@@ -1,126 +1,98 @@
-/* Reset & 基本設定 */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: "Segoe UI", sans-serif;
-    background-color: #f4f4f4;
-  }
-  
-  /* Navbar 導覽列 */
-  header {
-    background-color: #4CAF50;
-    padding: 12px 24px;
-    color: white;
-  }
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .logo {
-    display: flex;
-    align-items: center;
-    font-size: 1.4rem;
-    font-weight: bold;
-  }
-  
-  .logo img {
-    width: 32px;
-    margin-right: 10px;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 24px;
-  }
-  
-  nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-  }
-  
-  nav ul li a:hover {
-    text-decoration: underline;
-  }
-  
-  /* 首頁主視覺 */
-  .hero {
-    height: 85vh;
-    background: linear-gradient(to bottom, #e6f2e6, #d7ecff);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-  
-  .hero-content img {
-    width: 120px;
-    margin-bottom: 20px;
-  }
-  
-  .hero-content p {
-    font-size: 1.3rem;
-    color: #333;
-    font-weight: bold;
-  }
-  
-  /* Wallet 頁面主要區塊 */
-  .wallet-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 60px;
-    padding: 40px;
-  }
-  
-  .wallet-left img {
-    width: 120px;
-  }
-  
-  .wallet-right {
-    background-color: #e7f5d9;
-    padding: 25px 35px;
-    border-radius: 10px;
-    width: 320px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .wallet-card {
-    background-color: #a5d6a7;
-    padding: 15px;
-    border-radius: 8px;
-    font-weight: bold;
-    color: #333;
-    text-align: center;
-  }
-  
-  /* 按鈕 */
-  .manage-btn,
-  .add-btn {
-    padding: 10px 20px;
-    border: 2px solid #4caf50;
-    background-color: #f0fff4;
-    color: #2e7d32;
-    border-radius: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    align-self: center;
-  }
-  
-  .manage-btn:hover,
-  .add-btn:hover {
-    background-color: #c8f6cd;
-  }
-  
-  
-  
+.search-widget {
+  max-width: 900px;
+  margin: 40px auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #333;
+}
+.search-bar {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+}
+.dropdown-trigger {
+  position: relative;
+  margin-right: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+.dropdown-trigger span {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  display: inline-block;
+}
+.search-bar input[type="text"] {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  margin-right: 10px;
+}
+.search-bar button {
+  padding: 9px 20px;
+  background: #0088ff;
+  border: none;
+  color: #fff;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #efefef;
+  border: 1px solid #ddd;
+  display: none;
+  z-index: 10;
+  padding: 20px;
+}
+.dropdown-menu.active {
+  display: flex;
+}
+.district-list {
+  width: 30%;
+  border-right: 1px solid #aaa;
+  padding-right: 20px;
+}
+.district-list ul {
+  list-style: none;
+}
+.district-list li {
+  padding: 6px 0;
+  cursor: pointer;
+}
+.district-list li:hover {
+  color: #0095ff;
+}
+.filters {
+  flex: 1;
+  padding-left: 20px;
+}
+.filters h4 {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #555;
+}
+.filter-group {
+  margin-bottom: 16px;
+}
+.filter-group .btn-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+.filter-group .btn-group .btn {
+  margin: 4px;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.filter-group .btn-group .btn.selected {
+  background: #0084ff;
+  color: #fff;
+  border-color: #007bff;
+}

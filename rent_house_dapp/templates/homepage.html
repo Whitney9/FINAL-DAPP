@@ -4,30 +4,77 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>rental house</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/header.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/homepage.css') }}">
 </head>
 <body>
   <header>
     <div class="navbar">
-      <div class="logo">
+      <a class="logo" href="/homepage">
         <img src="https://img.icons8.com/ios-filled/50/ffffff/wallet--v1.png" alt="logo">
         <span>rental house</span>
-      </div>
+      </a>
       <nav>
         <ul>
-          <li><a href="/greenshop">rent</a></li>
-          <li><a href="#">帳戶管理</a></li>
+          <li><a href="/my_rentals">rent</a></li>
           <li><a href="#">租屋</a></li>
+          <li><a href="/post_object">幫我出租</a></li>
           <li><a href="/login">登出</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main class="hero">
-    <div class="hero-content">
-      <img src="{{ url_for('static', filename='image/logo_carbon_wallet.png') }}" alt="wallet icon">
-      <p>標語。</p>
+  <main>
+    <div class="search-widget">
+      <div class="search-bar">
+        <div class="dropdown-trigger" id="citySelector">
+          <span id="cityLabel">中山區 ▾</span>
+        </div>
+        <input type="text" placeholder="請輸入關鍵字（社區名、街道名、捷運名等）">
+        <button type="button">搜尋</button>
+        <div class="dropdown-menu" id="dropdownMenu">
+          <div class="district-list">
+            <h4>行政區</h4>
+            <ul>
+              <li>中山區</li>
+              <li>大安區</li>
+              <li>信義區</li>
+              <li>士林區</li>
+              <li>內湖區</li>
+              <li>中正區</li>
+              <li>松山區</li>
+              <li>萬華區</li>
+              <li>大同區</li>
+              <li>北投區</li>
+            </ul>
+          </div>
+          <div class="filters">
+            <div class="filter-group">
+              <h4>類型</h4>
+              <div class="btn-group">
+                <div class="btn">整層住家</div>
+                <div class="btn">獨立住宅</div>
+                <div class="btn">分租套房</div>
+                <div class="btn">雅房</div>
+                <div class="btn">其他</div>
+              </div>
+            </div>
+            <div class="filter-group">
+              <h4>租金</h4>
+              <div class="btn-group">
+                <div class="btn">5000元以下</div>
+                <div class="btn">5000-10000元</div>
+                <div class="btn">10000-20000元</div>
+                <div class="btn">20000-30000元</div>
+                <div class="btn">30000-40000元</div>
+                <div class="btn">40000-60000元</div>
+                <div class="btn">60000元以上</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 

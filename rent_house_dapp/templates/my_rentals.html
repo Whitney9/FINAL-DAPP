@@ -3,9 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <title>我的租賃紀錄</title>
-  <link rel="stylesheet" href="my_rentals.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/header.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/my_rentals.css') }}">
 </head>
 <body>
+  <header>
+    <div class="navbar">
+      <a class="logo" href="/homepage">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/wallet--v1.png" alt="logo">
+        <span>rental house</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="/my_rentals">rent</a></li>
+          <li><a href="#">租屋</a></li>
+          <li><a href="/post_object">幫我出租</a></li>
+          <li><a href="/login">登出</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
   <div class="records-container">
     <h1>我的租賃紀錄</h1>
     <table>
