@@ -11,9 +11,11 @@ def create_app():
    from rent_house_dapp.routes.login import login
    from rent_house_dapp.routes.register import register
    from rent_house_dapp.routes.homepage import homepage
+   from rent_house_dapp.routes.post_object import post_object
 
    app.register_blueprint(homepage)
    app.register_blueprint(login)
    app.register_blueprint(register)
+   app.register_blueprint(post_object)
 
    return app

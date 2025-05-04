@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>發布租貨物件</title>
+  <link rel="stylesheet" href="post_object.css">
+</head>
+<body>
+  <div class="form-container">
+    <h1>發布租貨物件</h1>
+
+    <label>物件名稱</label>
+    <input type="text" placeholder="輸入物件名稱、、、">
+
+    <label>租貨描述</label>
+    <textarea placeholder="輸入租貨描述、、、"></textarea>
+
+    <label>地點</label>
+    <div class="location-row">
+      <input type="text" placeholder="輸入地址、、、">
+      <button class="map-icon">📍</button>
+    </div>
+
+    <label>租金(每月)</label>
+    <input type="text" placeholder="輸入租金"> <span class="unit">NTD</span>
+
+    <label>押金</label>
+    <input type="text" placeholder="輸入押金">
+
+    <label>租貨日期</label>
+    <div class="date-row">
+      <input type="date" placeholder="輸入開始日期">
+      <input type="date" placeholder="輸入日期">
+    </div>
+
+    <label>物件照片上傳</label>
+    <div class="upload-area">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png" alt="預覽圖片">
+      <button>選擇檔案</button>
+    </div>
+
+    <div class="btn-group">
+      <button class="cancel">Cancel</button>
+      <button class="submit">發布租貨物件</button>
+    </div>
+  </div>
+</body>
+</html>
