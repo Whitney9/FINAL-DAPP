@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>智能減碳錢包 - 註冊</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/register.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>註冊</h1>
+    <input type="text" id="name" placeholder="姓名" required/>
+    <input type="date" id="birthdate" class="birthdate" required/>
+    <div class="gender-input">
+      <input type="text" id="gender" placeholder="性別" readonly required />
+      <div class="dropdown-options" id="genderOptions">
+        <div>男性</div>
+        <div>女性</div>
+        <div>其他</div>
+      </div>
+    </div>
+    <input type="email" id="email" placeholder="電子郵件" required/>
+    <input type="password" id="password" placeholder="密碼" required/>
+    <input type="password" id="confirm-password" placeholder="確認密碼" required/>
+    <button id="register-button" class="button">註冊</button>
+  </div>
+  <script src="{{ url_for('static', filename='script/register.js') }}"></script>
+</body>
+</html>

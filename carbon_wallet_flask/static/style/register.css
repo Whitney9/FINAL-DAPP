@@ -1,0 +1,74 @@
+body {
+   margin: 0;
+   font-family: 'Microsoft JhengHei', sans-serif;
+   background: url("../image/background.png") no-repeat center center fixed;
+   background-size: cover;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+}
+.container {
+   width: 80%;
+   max-width: 600px;
+   margin: auto;
+}
+h1 {
+   text-align: center;
+   font-weight: bold;
+   font-size: 40px;
+}
+input {
+   width: 100%;
+   padding: 15px;
+   margin: 5px 0;
+   border-radius: 10px;
+   border: 1px solid #ccc;
+   box-sizing: border-box;
+   font-size: 16px;
+}
+.birthdate {
+   text-transform: uppercase;
+   cursor: pointer;
+}
+.button {
+   width: 100%;
+   padding: 15px;
+   border: none;
+   border-radius: 20px;
+   margin: 5px 0;
+   background-color: #5ca062;
+   color: white;
+   font-weight: bold;
+   font-size: 16px;
+   cursor: pointer;
+}
+.button:hover {
+   background-color: #4b8a5c;
+}
+.gender-input {
+   position: relative;
+}
+.gender-input input {
+   cursor: pointer;
+}
+.dropdown-options {
+   position: absolute;
+   top: 100%;
+   left: 0;
+   right: 0;
+   background: white;
+   border: 1px solid #ccc;
+   border-radius: 10px;
+   z-index: 1000;
+   display: none;
+   max-height: 150px;
+   overflow-y: auto;
+}
+.dropdown-options div {
+   padding: 10px;
+   cursor: pointer;
+}
+.dropdown-options div:hover {
+   background-color: #f0f0f0;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>還不知道</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/wallet--v1.png" alt="logo">
+        <span>還不知</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/greenshop">商店</a></li>
+          <li><a href="#">帳戶管理</a></li>
+          <li><a href="#">租屋</a></li>
+          <li><a href="/login">登出</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="hero-content">
+      <img src="{{ url_for('static', filename='image/logo_carbon_wallet.png') }}" alt="wallet icon">
+      <p>標語。</p>
+    </div>
+  </main>
+
+  <script src="{{ url_for('static', filename='script/homepage.js') }}"></script>
+</body>
+</html>
