@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>rental house</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style/header.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style/complete_upload.css') }}">
+      </head>
+      <body>
+        <header>
+          <div class="navbar">
+            <a class="logo" href="/homepage">
+              <img src="https://img.icons8.com/ios-filled/50/ffffff/wallet--v1.png" alt="logo">
+              <span>rental house</span>
+            </a>
+            <nav>
+              <ul>
+                <li><a href="/my_rentals">我的租賃記錄</a></li>
+                <li><a href="/About_Us">About Us</a></li>
+                <li><a href="/post_object">幫我出租</a></li>
+                <li><a href="/login">登出</a></li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+  <h1>簽約結果頁</h1>
+  <div class="result-box">
+    <img src="https://img.icons8.com/emoji/96/000000/check-mark-emoji.png" alt="success" class="check-icon">
+
+    <h2>Lease Successfully Signed</h2>
+    <div class="info">Blockchain transaction has been submitted and confirmed.</div>
+
+    <div class="info"><span class="highlight">Modern House — Taipei</span></div>
+    <div class="info">Jun 1, 2024 – Jun 3, 2024</div>
+    <div class="info"><strong>ETH</strong> 0.7</div>
+
+    <div class="tx-hash">
+      Transaction Hash:
+      <span id="hash" class="highlight">0x3e1f...c9d8</span>
+      <button class="copy-btn" onclick="copyHash()">📋 copy</button>
+    </div>
+    <div class="info">Blockchain confirmation may take a few minutes.</div>
+
+    <div class="btn-group">
+      <button class="btn home-btn" onclick="location.href='/homepage'">Return to Home</button>
+      <button class="btn contract-btn" onclick="location.href='/view_contract'">View Contract</button>
+    </div>
+  </div>
+<!--下面是Chatgpt寫的-->>
+  <script>
+    function copyHash() {
+      const hashText = document.getElementById('hash').textContent;
+      navigator.clipboard.writeText(hashText).then(() => {
+        alert("Transaction Hash 已複製！");
+      });
+    }
+  </script>
+</body>
+</html>

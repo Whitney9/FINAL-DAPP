@@ -14,12 +14,15 @@ def create_app():
    from rent_house_dapp.routes.post_object import post_object
    from rent_house_dapp.routes.my_rentals import my_rentals
    from rent_house_dapp.routes.About_Us import About_Us
-   
+   from rent_house_dapp.routes.complete_upload import complete_upload
+
    app.register_blueprint(homepage)
    app.register_blueprint(login)
    app.register_blueprint(register)
    app.register_blueprint(post_object)
    app.register_blueprint(my_rentals)
    app.register_blueprint(About_Us)
+   app.register_blueprint(complete_upload)
+
 
    return app
