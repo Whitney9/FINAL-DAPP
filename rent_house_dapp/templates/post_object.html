@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>發布租貨物件</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/header.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/post_object.css') }}">
+</head>
+<body>
+  <body>
+    <header>
+      <div class="navbar">
+        <a class="logo" href="/homepage">
+          <img src="static/image/logo.png" alt="logo">
+        </a>
+        <nav>
+          <ul>
+            <li><a href="/homepage">Home</a></li>
+            <li><a href="/my_rentals">我的租賃記錄</a></li>
+            <li><a href="/About_Us">About Us</a></li>
+            <li><a href="/post_object">幫我出租</a></li>
+            <li><a href="/login">登出</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="center-wrapper">
+      <div class="form-wrapper">
+        <form id="rentalForm" action="/complete_upload" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
+          <div class="form-container">
+            <h1>Publish Room for Rent</h1>
+  
+            <div class="row">
+              <div class="input-group">
+                <label>Room's Name：</label>
+                <input type="text" name="title" placeholder="Input Room's Name..." required>
+  
+                <label>Rent Description：</label>
+                <textarea name="description" placeholder="Input Rent Description..." required></textarea>
+              </div>
+  
+              <div class="image-upload">
+                <label for="fileInput" class="upload-area">
+                  <img id="preview" src="static/image/image-icon.png" alt="預覽圖片" />
+                  <p>Drop your image here, or <span class="browse">browse</span><br>
+                  <small>Support JPG, JPEG, PNG</small></p>
+                </label>
+                <input type="file" id="fileInput" name="photo" accept="image/*" required hidden />
+              </div>
+            </div>
+  
+            <label>Location：</label>
+            <div class="location-row">
+              <input type="text" id="locationInput" name="location" placeholder="Input Location..." required>
+              <button class="map-icon" type="button" onclick="getLocation()">📍</button><!--這裏的function 需要改一下-->
+            </div>
+  
+            <div class="row">
+              <div class="input-group">
+                <label>Rent Cost：</label>
+                <input type="number" name="rent" placeholder="Input Rent Cost (NTD)" required>
+              </div>
+              <div class="input-group">
+                <label>Deposit：</label>
+                <input type="number" name="deposit" placeholder="Input Deposit Cost (NTD)" required>
+              </div>
+            </div>
+  
+            <div class="row">
+              <div class="input-group">
+                <label>Rent Start date</label>
+                <input type="date" name="start_date" required>
+              </div>
+              <div class="input-group">
+                <label>Rent End date</label>
+                <input type="date" name="end_date" required>
+              </div>
+            </div>
+  
+            <div class="btn-group">
+              <button type="button" class="btn cancel" onclick="goHome()">Cancel</button>
+              <button type="button" class="btn nft">Mint NFT</button>
+              <button type="submit" class="btn submit">Publish Rent</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+      function goHome() {
+        window.location.href = '/';
+      }
+      function validateForm() {
+        const fileInput = document.getElementById('fileInput');
+        if (!fileInput.files.length) {
+          alert("請上傳照片！");
+          return false;
+        }
+        return true;
+      }
+      document.getElementById('fileInput').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (file) {
+          const imgUrl = URL.createObjectURL(file);
+          document.getElementById('preview').src = imgUrl;
+        }
+      });
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(success, error);
+        } else {
+          alert("瀏覽器不支援地理定位功能");
+        }
+      }
+      function success(position) {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`)
+          .then(response => response.json())
+          .then(data => {
+            const address = data.display_name;
+            document.getElementById('locationInput').value = address;
+          })
+          .catch(err => {
+            alert("地址查詢失敗：" + err);
+          });
+      }
+      function error(err) {
+        alert("定位失敗：" + err.message);
+      }
+    </script>
+  </body>
+  </html>
+  

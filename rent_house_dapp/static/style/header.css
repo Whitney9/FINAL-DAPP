@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: url("../image/background.jpg") no-repeat center center fixed;
+    background-size: cover;
+    /*別改 display 因爲會影響到排版*/
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.navbar {
+    padding: 24px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0d0b14; 
+    border-bottom: 3px solid #242944; 
+}
+
+.logo {
+    font-size: 1.5rem;
+}
+.logo img {
+    width: 200px;
+    height: auto;
+    margin-right: 30px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+}
+
+nav ul li a {
+    color: #dcdcdc;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>rental house</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style/header.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style/complete_upload.css') }}">
+      </head>
+      <body>
+        <header>
+          <div class="navbar">
+            <a class="logo" href="/homepage">
+              <img src="static/image/logo.png" alt="logo">
+            </a>
+            <nav>
+              <ul>
+                <li><a href="/homepage">Home</a></li>
+                <li><a href="/my_rentals">我的租賃記錄</a></li>
+                <li><a href="/About_Us">About Us</a></li>
+                <li><a href="/post_object">幫我出租</a></li>
+                <li><a href="/login">登出</a></li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+  <h1>簽約結果頁</h1>
+  <div class="center-wrapper">
+    <div class="result-box">
+      <img src="static/image/checkmark.png" alt="Success" class="check-icon" />
+      <h2>Lease Successfully Signed</h2>
+      <p class="subtitle">Blockchain transaction has been submitted and confirmed.</p>
+
+      <div class="info-block">
+        <!--這裏就寫成功交易的資料-->>
+        <h3>definition.... </h3>
+        <p>from when to when</p>
+        <p>ETH 100000</p>
+        <p class="txhash">Transaction Hash : 0x3e1f...c9d8</p>
+        <p class="note">Blockchain confirmation may take a few minutes.</p>
+      </div>
+
+      <div class="button-group">
+        <a href="/homepage" class="btn yellow">Return to Home</a>
+        <a href="#" class="btn gold">View Contract</a>
+      </div>
+    </div>
+  </div>
+<!--下面是Chatgpt寫的-->>
+  <script>
+    function copyHash() {
+      const hashText = document.getElementById('hash').textContent;
+      navigator.clipboard.writeText(hashText).then(() => {
+        alert("Transaction Hash 已複製！");
+      });
+    }
+  </script>
+</body>
+</html>
