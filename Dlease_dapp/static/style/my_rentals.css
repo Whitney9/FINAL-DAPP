@@ -29,6 +29,15 @@ h1 {
   font-size: 14px;
   cursor: pointer;
 }
+/*按鈕dhover*/
+.filter-bar button:hover{
+  color:grey;
+  background-color: rgb(253, 142, 142);
+}
+/*年月日的東東的hover*/
+.filter-bar input:hover{
+  color:#666;
+}
 
 .rental-table {
   width: 100%;
