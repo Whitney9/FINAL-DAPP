@@ -40,6 +40,9 @@
     .image-upload {
       flex: 1;
     }
+    .image-upload:hover{
+      background-color: rgb(70, 69, 69);
+    }
     label {
       display: block;
       margin-bottom: 12px;
@@ -84,6 +87,10 @@
       border: none;
       border-radius: 6px;
       cursor: pointer;
+      margin-bottom: 12px;/*對齊*/
+    }
+    .map-icon:hover {
+      background-color: grey;
     }
     .btn-group {
       display: flex;
@@ -98,7 +105,27 @@
       font-weight: bold;
       cursor: pointer;
     }
-  
-    .btn.cancel { background: #f4f4f4; color: #000; }
-    .btn.nft { background: #3366ff; color: #fff; }
-    .btn.submit { background: #00c853; color: #fff; }
+    /*時間軸的 icon 顔色變成白色*/
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      filter: invert(1);
+      cursor: pointer;
+    }
+
+    .btn.cancel { 
+      background: #f4f4f4; color: #000; 
+    }
+    .btn.cancel:hover {
+      background-color: grey;
+    }
+    .btn.nft { 
+      background: #3366ff; color: #fff; 
+    }
+    .btn.nft:hover{
+      background-color: #8a6cfb;
+    }
+    .btn.submit { 
+      background: #00c853; color: #fff; 
+    }
+    .btn.submit:hover {
+      background-color: green;
+    }

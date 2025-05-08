@@ -58,11 +58,15 @@
             <div class="row">
               <div class="input-group">
                 <label>Rent Cost：</label>
-                <input type="number" name="rent" placeholder="Input Rent Cost (NTD)" required>
+                <input type="number" name="rent" placeholder="Input Rent Cost (NTD)" required   min="0" 
+                max="100000" 
+                step="100">
               </div>
               <div class="input-group">
                 <label>Deposit：</label>
-                <input type="number" name="deposit" placeholder="Input Deposit Cost (NTD)" required>
+                <input type="number" name="deposit" placeholder="Input Deposit Cost (NTD)" required  min="0" 
+                max="100000" 
+                step="100">
               </div>
             </div>
   

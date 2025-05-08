@@ -80,7 +80,14 @@ h1 {
   display: inline-block;
   margin: 0 4px;
 }
-
+.pagination-dots .dot:hover {
+  background-color: orange;
+}
 .pagination-dots .dot.active {
   background: #f57c00;
 }
+  /*時間軸的 icon 顔色變成白色*/
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+  }

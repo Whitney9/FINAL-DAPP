@@ -4,8 +4,8 @@ body {
   background-color: #0d0b14;
   color: white;
 }
-
 h1 {
+  margin-top: 10px;
   font-family: "Poppins", sans-serif;
   font-size: 48px;
   text-transform: uppercase;
@@ -51,6 +51,9 @@ h1 {
   color: white;
   font-size: 16px;
 }
+.search-bar input:hover {
+  background-color: rgb(51, 50, 50);
+}
 .search-bar button {
   padding: 14px 24px;
   background-color: #333;
@@ -59,8 +62,7 @@ h1 {
   cursor: pointer;
 }
 .search-bar button:hover {
-  background-color: hsl(62, 86%, 42%);
-
+  background-color: hsl(62, 85%, 20%);
 }
 .room-cards {
   display: flex;
@@ -68,6 +70,9 @@ h1 {
   gap: 30px;
   flex-wrap: wrap;
   padding: 30px 20px;
+}
+.room-card:hover{
+  background-color: grey;
 }
 .room-card {
   background-color: #1e1b2d;
@@ -103,6 +108,9 @@ h1 {
   margin: 0 5px;
   background: #999;
   border-radius: 50%;
+}
+.pagination-dots .dot:hover {
+  background-color: orange;
 }
 .pagination-dots .dot.active {
   background: #f36;
