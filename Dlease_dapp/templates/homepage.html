@@ -6,6 +6,7 @@
   <title>Dlease 主頁</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style/header.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='style/homepage.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
 </head>
 <body>
   <header>
@@ -25,6 +26,49 @@
     </div>
   </header>
 <h1>你好,楊欽漳！！！</h1>
+<!--  整 MetaMask -->
+<div class="card-body all-in-one-card">
+    <!-- 位址 -->
+    <div class="form-section">
+        <strong>位址</strong>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="contract_account"
+                value="0x122F397789B1F54E5819df3Ca0865E9BF4bA56F0" />
+            <div class="input-group-append">
+                <button type="button" class="btn btn-danger" id="contract_link_btn">
+                    連結
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 區塊鏈 -->
+    <div class="form-section">
+        <h3 class="section-title">區塊鏈</h3>
+        <strong>Chain</strong>
+        <input type="text" class="form-control" id="chain" readonly />
+    </div>
+
+<!-- 錢包（帳戶與餘額） -->
+    <div class="form-section">
+        <h3 class="section-title">錢包</h3>
+        <div class="row">
+            <div class="col-6">
+                <strong>帳戶</strong>
+                <input type="text" class="form-control" id="account" readonly />
+            </div>
+<div class="col-6">
+    <strong>以太幣餘額</strong>
+    <div class="ether-group">
+        <input type="text" class="form-control" id="balance" readonly />
+        <span class="ether-unit">ether</span>
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+<!-------------------------------------------------------------------------------------------->
+
   <main>
     <div class="search-widget">
       <div class="search-bar">
@@ -61,8 +105,67 @@
       <span class="dot"></span>
     </div>
   </main>
-  
   <script src="{{ url_for('static', filename='script/homepage.js') }}"></script>
+<!----------------------------------------------->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.2.0/js/adminlte.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.5/ethers.umd.min.js"></script>
+    <script src="{{ url_for('static', filename='js/tools.js') }}"></script>
+
+<script>
+        var signer = null;
+        var provider = null;
+        $(async function () {
+            console.log("ethereum", window.ethereum);
+            console.log("ethers", ethers);
+            $("#ethers_version").html(ethers.version);  //取得ethers版本並顯示
+
+            //檢查瀏覽器是否已安裝MetaMask
+            if (window.ethereum != null) {
+                //更新區塊鏈名稱
+                updateChainName(window.ethereum.chainId, "#chain");
+                //更新帳戶
+                updateAccount("#account");
+
+                //連接到MetaMask EIP-1193物件（以太坊供應商 JavaScript API），允許Ethers透過MetaMask存取並發出所有唯讀請求
+                provider = new ethers.BrowserProvider(window.ethereum);
+                //由MetaMask為使用者管理的私鑰執行請求存取寫入操作的機會
+                signer = await provider.getSigner();
+                console.log("provider", provider);
+                console.log("signer", signer);
+
+                //更新區塊高度
+                updateBlockNumber("#block_number");
+                //更新帳戶餘額
+                updateAccountBalance(signer.address, "#balance");
+            } else {
+                alert("未安裝 MetaMask!");
+            }
+        });
+
+        //MetaMask連結區塊鏈
+        ethereum.on("connect", async function (connectInfo) {
+            console.log("connect", connectInfo);
+            updateChainName(connectInfo.chainId, "#chain");
+        });
+
+        //MetaMask切換網路
+        ethereum.on("chainChanged", function (chainId) {
+            console.log("chainChanged", chainId);
+            window.location.reload();
+        });
+
+        //MetaMask切換帳戶
+        ethereum.on("accountsChanged", async function (accounts) {
+            console.log("accountsChanged", accounts);
+            updateAccount("#account");
+            signer = await provider.getSigner();
+
+            console.log("accountsChanged", signer.address);
+            updateAccountBalance(signer.address, "#balance");
+        });
+    </script>
 </body>
 </html>
 

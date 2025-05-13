@@ -7,7 +7,7 @@ def create_app():
 
    db.init_app(app)
    # Import and register routes
-   
+   from Dlease_dapp.routes.test import test #給我測試用的
    from Dlease_dapp.routes.login import login
    from Dlease_dapp.routes.register import register
    from Dlease_dapp.routes.homepage import homepage
@@ -25,4 +25,5 @@ def create_app():
    app.register_blueprint(About_Us)
    app.register_blueprint(complete_upload)
    app.register_blueprint(details)
+   app.register_blueprint(test)
    return app
