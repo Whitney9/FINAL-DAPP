@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dlease Details</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/details.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/header.css') }}">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <a class="logo" href="/homepage">
+        <img src="static/image/logo.png" alt="logo">
+      </a>
+      <nav>
+        <ul>
+          <li><a href="/homepage">Home</a></li>
+          <li><a href="/my_rentals">我的租賃記錄</a></li>
+          <li><a href="/About_Us">About Us</a></li>
+          <li><a href="/post_object">幫我出租</a></li>
+          <li><a href="/login">登出</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+<body>
+  <div class="details-container">
+    <h1 class="title">DETAILS</h1>
+
+    <div class="details-card">
+      <img src="{{ url_for('static', filename='image/zengin_room.jpg') }}" alt="Room Image" class="room-image" />
+
+      <div class="room-info">
+        <h2>Zengin Cafe</h2>
+        <hr />
+        <div class="icons">
+          <div><img src="{{ url_for('static', filename='icons/users.svg') }}" alt="guests"> 2 guests</div>
+          <div><img src="{{ url_for('static', filename='icons/bedroom.svg') }}" alt="bedrooms"> 10 bedrooms</div>
+          <div><img src="{{ url_for('static', filename='icons/bath.svg') }}" alt="bath"> 1 private bath</div>
+        </div>
+        <p class="description">
+          Comfortable rooms equipped with toiletries and essentials. Each room is clean, cozy, and ideal for travelers.
+          Free Wi-Fi is available, and breakfast is included. Quiet surroundings with convenient access to nearby 
+          attractions and transport. Perfect for short stays near Mt. Ali.
+        </p>
+
+        <div class="button-group">
+          <button class="btn lease">Sign Lease</button>
+          <button class="btn contract">View Contract</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

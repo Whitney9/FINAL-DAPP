@@ -1,0 +1,93 @@
+
+.rental-record-page {
+  padding: 40px;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #0d0b14, #321e4e);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.filter-bar button,
+.filter-bar input {
+  padding: 8px 16px;
+  background: #1e1b2d;
+  border: 1px solid #888;
+  color: white;
+  border-radius: 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+/*按鈕dhover*/
+.filter-bar button:hover{
+  color:grey;
+  background-color: rgb(253, 142, 142);
+}
+/*年月日的東東的hover*/
+.filter-bar input:hover{
+  color:#666;
+}
+
+.rental-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.rental-table th,
+.rental-table td {
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #666;
+}
+
+.room-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.room-info img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.pagination-dots {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.pagination-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #aaa;
+  display: inline-block;
+  margin: 0 4px;
+}
+.pagination-dots .dot:hover {
+  background-color: orange;
+}
+.pagination-dots .dot.active {
+  background: #f57c00;
+}
+  /*時間軸的 icon 顔色變成白色*/
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+  }

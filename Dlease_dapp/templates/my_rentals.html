@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>Dlease 我的租賃紀錄</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/header.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/my_rentals.css') }}">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <a class="logo" href="/homepage">
+        <img src="static/image/logo.png" alt="logo">
+      </a>
+      <nav>
+        <ul>
+          <li><a href="/homepage">Home</a></li>
+          <li><a href="/my_rentals">我的租賃記錄</a></li>
+          <li><a href="/About_Us">About Us</a></li>
+          <li><a href="/post_object">幫我出租</a></li>
+          <li><a href="/login">登出</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="rental-record-page">
+    <h1>MY RENTAL RECORD</h1>
+  
+    <div class="filter-bar">
+      <button id="All" class="button">All</button><!--麻煩幫我做後端的filter 部分謝謝-->
+      <button>In progress</button>
+      <button>Completed</button>
+      <button>Cancelled</button>
+      <input type="date" placeholder="Start date" />
+      <input type="date" placeholder="End date" />
+    </div>
+  
+    <table class="rental-table">
+      <thead>
+        <tr>
+          <th>Room type</th>
+          <th>Period</th>
+          <th>Price</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="room-info">
+              <img src="logo.png" alt="Room image" />
+              <div>
+                <strong>Barn Stay</strong><br />
+                <small>2F Suite</small>
+              </div>
+            </div>
+          </td>
+          <td>2025/05/05<br />–<br />2025/05/10</td>
+          <td>$7,923 TWD / night</td>
+          <td>In progress</td>
+        </tr>
+  
+        <tr>
+          <td>
+            <div class="room-info">
+              <img src="logo.png" alt="Room image" />
+              <div>
+                <strong>Grand Hotel</strong><br />
+                <small>Horizon Room</small>
+              </div>
+            </div>
+          </td>
+          <td>2025/03/14<br />–<br />2025/03/19</td>
+          <td>$8,529 TWD / night</td>
+          <td>Completed</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!--點點點-->
+  <div class="pagination-dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</body>
+</html>

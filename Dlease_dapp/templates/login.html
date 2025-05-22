@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DLease 登入</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/login.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/header.css') }}">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <a class="logo" href="/homepage">
+        <img src="static/image/logo.png" alt="logo">
+      </a>
+      <nav>
+        <ul>
+          <li><a href="/homepage">Home</a></li>
+          <li><a href="/my_rentals">我的租賃記錄</a></li>
+          <li><a href="/About_Us">About Us</a></li>
+          <li><a href="/post_object">幫我出租</a></li>
+          <li><a href="/login">登出</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="container">
+    <div class="logo">
+      <h1>Sign in/Login</h1>
+    </div>
+    <h3>Email:</h3>
+    <input type="email" placeholder="Email" />
+    <h3>Password:</h3>
+    <input type="password" placeholder="Password" />
+    <div>
+      <button class="button login">Login</button>
+      <button class="button register">Sign Up</button>
+    </div>
+    <a class="forgot">Forgot Password？</a>
+  </div>
+  <script src="{{ url_for('static', filename='script/login.js') }}"></script>
+</body>
+</html>

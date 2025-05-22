@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dlease 註冊</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/register.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/header.css') }}">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <a class="logo" href="/homepage">
+        <img src="static/image/logo.png" alt="logo">
+      </a>
+      <nav>
+        <ul>
+          <li><a href="/homepage">Home</a></li>
+          <li><a href="/my_rentals">我的租賃記錄</a></li>
+          <li><a href="/About_Us">About Us</a></li>
+          <li><a href="/post_object">幫我出租</a></li>
+          <li><a href="/login">登出</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="register-page">
+    <div class="register-left">
+      <img src="static/image/NFT.logo.png" alt="logo">
+      <h2>Want to collect travel experiences?</h2>
+      <p>DLease helps you unlock it!</p>
+    </div>
+
+  <div class="register-right">
+    <div class="container">
+      <h1>Sign Up</h1>
+      <input type="text" id="name" placeholder="Name" required />
+      <input type="date" id="birthdate" class="birthdate" required />
+
+      <div class="gender-input">
+        <input type="text" id="gender" placeholder="Gender" readonly required />
+        <div class="dropdown-options" id="genderOptions">
+          <div>Male</div>
+          <div>Female</div>
+          <div>Other</div>
+        </div>
+      </div>
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <input type="password" id="confirm-password" placeholder="Confirm Password" required />
+      <button id="register-button" class="button">Register</button>
+    </div>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='script/register.js') }}"></script>
+</body>
+</html>
