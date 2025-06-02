@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(45deg, #9A3CDC, #0f0c1d, #0f0c1d, #0f0c1d, #0f0c1d);
+    color: #ffffff;
+}
+
+nav.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    background-color: #0f0c1d;
+    margin-top: -30px;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    width: 150px;
+    height: 150px;
+}
+
+.logo img{
+    width: 100%;
+    height: 100%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 100px;
+    margin-left: 700px;
+}
+
+.nav-links li a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.user-icon {
+    font-size: 1.6em;
+    color: #ffc94d;
+    padding-left: 30px;
+}
+
+.user-icon a{
+    color: #ffc94d;
+    text-decoration: none;
+}
+
+.main-content {
+  padding: 2rem;
+  text-align: center;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 1000px;
+  height: 40px;
+}
+
+.search-box{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: none;
+    padding: 0.8rem 1rem;
+    background-color: #0f0c1d;
+    border:  1px solid #ccc;
+    color: #fff;
+}
+
+input[type="text"]::placeholder {
+    color: #fff;
+}
+
+.search-button{
+    border: none;
+    font-size: 1rem;
+    margin-left: -35px;
+    margin-top: -2px;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: #0f0c1d;
+    color: #ccc;
+}
+
+.card-list .card-item{
+    list-style: none;
+    color: #fff;
+}
+
+.card-list .card-item .card-link{
+    user-select: none;
+    width: 350px;
+    display: block;
+    background-color: #080614c9;
+    padding: 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    border: 2px solid #ccc;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+    transition: 0.2s ease;
+    margin: 5px auto;
+    color: #fff;
+}
+
+.card-list .card-item .card-link:hover{
+    border-color: #f54646;
+}
+
+.card-list .card-link .card-image{
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-link h2{
+    margin-top: 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+
+.card-link p{
+    font-family: "Poppins", sans-serif;
+}
+
+.cardscroll{
+    display: flex;
+}
+
+.swiper-pagination-bullet{
+    background-color: #f54646;
+}
+
+.container{
+    width: 85%;
+    margin-top: 50px;
+}
+

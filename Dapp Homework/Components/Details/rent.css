@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&family=Yaldevi:wght@200..700&display=swap');
+
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(to bottom right, #0f0c1d, #0f0c1d, #0f0c1d, #0f0c1d, #9A3CDC);
+  color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.container {
+  width: 90%;
+  height: 550px;
+  max-width: 1000px;
+  text-align: center;
+  background-color: #080614c9;
+  margin-top: 40px;
+  border-radius: 10px;
+}
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #C0B8B8;
+}
+.details-card {
+  display: flex;
+  flex-direction: row;
+  background-color: #080614c9;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.details-card img {
+  width: 40%;
+  object-fit: cover;
+  margin: 30px;
+  border-radius: 5px;
+}
+.details-content {
+  padding-right: 40px;
+  text-align: left;
+  flex: 1;
+  height: 80%;
+}
+.details-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+
+}
+.icons {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.icons div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9rem;
+}
+.description {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 25px;
+  font-family: "Yaldevi", sans-serif;
+  font-weight: lighter;
+  letter-spacing: 1px;
+}
+.buttons {
+  display: flex;
+  gap: 15px;
+  margin: 0 auto;
+  width: 500px;
+  padding-left: 210px;
+}
+.buttons button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+.sign {
+  background-color: #f8c255;
+  color: #000;
+}
+.view {
+  background-color: #b2751c;
+  color: #fff;
+}
+
+.guest-icon i{
+  color: #f2f2f2;
+  width: 100px;
+  background-color: #b2751c;
+}

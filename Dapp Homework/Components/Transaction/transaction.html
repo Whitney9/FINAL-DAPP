@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DLease Confirmation</title>
+  <link rel="stylesheet" href="transaction.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+  <nav class="navbar">
+        <div class="logo">
+            <img src="/Components/images/logo.png" alt="DLease Logo" class="LogoImage"/>
+        </div>
+        <ul class="nav-links">
+        <li><a href="/Components/HomepageLogin/homepagelogin.html">Home</a></li>
+        <li><a href="#">Explore</a></li>
+        <li><a href="#">About</a></li>
+        </ul>
+        <div class="user-icon">
+            <a href="/Components/Publish/publish.html">
+                <i class="fa-solid fa-circle-user"></i>
+            </a>
+        </div>
+   </nav> 
+
+  <main class="confirmation-box">
+    <div class="checkmark">
+      <i class="fa-solid fa-circle-check"></i>
+    </div>
+    <h2>Lease Successfully Signed</h2>
+    <p class="subtitle">Blockchain transaction has been submitted and confirmed.</p>
+
+    <h3>Zengin Cafe – Taipei</h3>
+    <p>Jun 1, 2024 – Jun 3, 2024</p>
+    <p>ETH 0.7</p>
+
+    <p class="hash">Transaction Hash : 0x3e1f...c9d8</p>
+    <p class="notice">Blockchain confirmation may take a few minutes.</p>
+
+    <div class="button-group">
+      <button class="home-btn" onclick="goHome()">Return to Home</button>
+      <button class="view-btn" onclick="viewContract()">View Contract</button>
+    </div>
+  </main>
+
+  <script src="transaction.js"></script>
+</body>
+</html>

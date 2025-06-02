@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DLease - Login/Sign Up</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./login.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+  <nav class="navbar">
+        <div class="logo">
+            <img src="/Components/images/logo.png" alt="DLease Logo" class="LogoImage"/>
+        </div>
+        <ul class="nav-links">
+        <li><a href="/Components/Homepage/homepage.html">Home</a></li>
+        <li><a href="#">Explore</a></li>
+        <li><a href="/Components/Login/login.html">Login</a></li>
+        </ul>
+        <div class="user-icon">
+            <a href="#">
+                <i class="fa-solid fa-circle-user"></i>
+            </a>
+        </div>
+   </nav> 
+
+  <main class="auth-container">
+    <section class="login-box">
+      <h2>Sign in/Login</h2>
+      <form>
+        <label>Email :</label>
+        <input type="email" placeholder="Email" required id="email" />
+        
+        <label>Password :</label>
+        <input type="password" placeholder="Password" required id="password"/>
+        
+        <a href="/Components/Homepage After Login/homepagelogin.html"><button type="submit" class="submit-btn" onclick="auth()">Sign in/Login</button></a>
+      </form>
+    </section>
+
+    <section class="signup-box">
+      <h2>Sign up</h2>
+      <p>Don't have an account yet?</p>
+      <p>Come and register for an account! Please click the sign up button at the below!</p>
+      <a href="/Components/SignUp/signup.html"><button class="signup-btn">Sign up</button></a>
+    </section>
+  </main>
+
+  <script>
+    function auth(){
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    //condition
+    if(email == "admin@gmail.com" && password == "admin123"){
+        window.location.href = "../HomepageLogin/homepagelogin.html";
+        alert("Login successful");
+    }
+    else{
+        alert("Login failed. Please check your email and password.");
+        return;
+    }
+  }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DLease - Publish Room</title>
+  <link rel="stylesheet" href="publish.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="/Components/images/logo.png" alt="DLease Logo" class="LogoImage"/>
+        </div>
+        <ul class="nav-links">
+        <li><a href="/Components/Homepage/homepage.html">Home</a></li>
+        <li><a href="#">Explore</a></li>
+        <li><a href="#">About</a></li>
+        </ul>
+        <div class="user-icon">
+            <a href="/Components/Publish/publish.html">
+                <i class="fa-solid fa-circle-user"></i>
+            </a>
+        </div>
+   </nav> 
+   </nav> 
+  </header>
+
+   <main>
+    <div class="form-container">
+      <h1>Publish Room for Rent</h1>
+      <form>
+        <div class="form-grid">
+          <div class="form-left">
+            <label>Room’s Name：</label>
+            <input type="text" placeholder="Input Room’s Name…">
+
+            <label>Rent Description：</label>
+            <textarea rows="4" placeholder="Input Rent Description…" class="rentdesc"></textarea>
+          </div>
+
+          <div class="form-right">
+            <label>Upload Image:</label>
+            <div class="upload-box" onclick="document.getElementById('imageInput').click();">
+              <input type="file" id="imageInput" accept="image/*" onchange="previewImage(event)">
+              <div class="upload-text">
+                <i class="fa-solid fa-image"></i>
+                <p>Drop your image here, or <span>browse</span><br>Support: JPG, JPEG, PNG</p>
+              </div>
+              <img id="preview" alt="Preview"/>
+            </div>
+          </div>
+        </div>
+
+        <label>Location：</label>
+        <input type="text" placeholder="Input Location…">
+
+        <div class="form-double">
+          <div>
+            <label>Rent Cost：</label>
+            <input type="number" placeholder="Input Rent Cost (NTD)">
+          </div>
+          <div>
+            <label>Deposit：</label>
+            <input type="number" placeholder="Input Deposit Cost (NTD)">
+          </div>
+        </div>
+
+        <div class="form-double">
+          <div>
+            <label>Rent Period：</label>
+            <input type="date" placeholder="Input Start date">
+          </div>
+          <div>
+            <label>Until Period:</label>
+            <input type="date" placeholder="Input End date" class ="untilperiod">
+          </div>
+        </div>
+
+        <div class="buttons">
+          <button type="reset" class="white-btn">Cancel</button>
+          <button type="button" class="blue-btn">Mint NFT</button>
+          <button type="submit" class="green-btn">Publish Rent</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+
+  <script src="publish.js"></script>
+</body>
+</html>

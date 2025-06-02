@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DLease Confirmation</title>
+  <link rel="stylesheet" href="datahistory.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body onload="loadRentalHistory()">
+  <nav class="navbar">
+        <div class="logo">
+            <img src="/Components/images/logo.png" alt="DLease Logo" class="LogoImage"/>
+        </div>
+        <ul class="nav-links">
+        <li><a href="/Components/HomepageLogin/homepagelogin.html">Home</a></li>
+        <li><a href="#">Explore</a></li>
+        <li><a href="#">About</a></li>
+        </ul>
+        <div class="user-icon">
+            <a href="/Components/Publish/publish.html">
+                <i class="fa-solid fa-circle-user"></i>
+            </a>
+        </div>
+   </nav> 
+
+   <div class="record-title">
+      <h1>MY RENTAL RECORD</h1>
+    </div>
+
+    <div class="filter-buttons">
+      <button onclick="filterStatus('All')" class="bar-btn">All</button>
+      <button onclick="filterStatus('In progress')" class="bar-btn">In progress</button>
+      <button onclick="filterStatus('Completed')" class="bar-btn">Completed</button>
+      <button onclick="filterStatus('Cancelled')" class="bar-btn">Cancelled</button>
+      <input type="date" id="startDate" class="date-input" placeholder="Start Date" class="bar-input">
+      <hr>
+      <input type="date" id="endDate" class="date-input" placeholder="End Date" class="bar-input">
+    </div>
+
+  <main class="confirmation-box">
+    <div class="rental-record">
+    <table id="rentalTable">
+      <thead>
+        <tr>
+          <th>Room type</th>
+          <th>Period</th>
+          <th>Price</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="rental-record-body">
+        <!-- Rental rows will appear here -->
+      </tbody>
+    </table>
+  </div>
+  </main>
+
+  <script src="datahistory.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zengin Cafe Details</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="rent.css">
+</head>
+<body>
+  <div class="container">
+    <h1>DETAILS</h1>
+    <div class="details-card">
+      <img src="/Components/images/hotel3.jpg" alt="Room Image">
+      <div class="details-content">
+        <h2>Grand Hotel</h2>
+        <hr>
+        <div class="icons">
+          <div><i class="fas fa-user-friends"></i>2 guests</div>
+          <div><i class="fas fa-bed"></i>10 bedrooms</div>
+          <div><i class="fas fa-bath"></i>1 private bath</div>
+        </div>
+        <div class="description">
+          Comfortable rooms equipped with toiletries and essentials. Each room is clean, cozy, and ideal for travelers. Free Wi-Fi is available, and breakfast is included. Quiet surroundings with convenient access to nearby attractions and transport. Perfect for short stays near Mt. Ali.
+        </div>
+      </div>  
+    </div>
+    <div class="buttons">
+          <button class="sign" onclick="signLease()">Sign Lease</button>
+          <button class="view">View Contract</button>
+    </div>
+  </div>
+  <script>
+    function signLease() {
+  const newLease = {
+    roomType: "Zengin Cafe",
+    roomSubtitle: "Scenic Room",
+    startDate: "2025/06/10",
+    endDate: "2025/06/15",
+    price: "6,999 TWD / night",
+    status: "In progress",
+    image: "../images/hotel3.jpg",
+  };
+
+  let rentals = JSON.parse(localStorage.getItem("rentalHistory")) || [];
+  rentals.push(newLease);
+  localStorage.setItem("rentalHistory", JSON.stringify(rentals));
+
+  // Navigate to rental record
+  window.location.href = "../DataHistory/index.html";
+  }
+  </script>
+</body>
+</html>
