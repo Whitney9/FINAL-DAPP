@@ -824,20 +824,40 @@ const depositVal = 1;
   // Prepare tokenURI: encode metadata as JSON with name, description, image
   const imageInput = document.getElementById("imageInput");
   const file = imageInput.files[0];
-  if (!file) {
-    alert("Please upload an image.");
+  const imageLink = document.getElementById("imageLinkInput").value.trim();
+
+  let imageValue = imageLink;
+  if (!imageLink && file) {
+    // Use uploaded file as data URL
+    const reader = new FileReader();
+    reader.onloadend = async function () {
+      const metadata = {
+        name,
+        description,
+        image: reader.result
+      };
+      await mintWithMetadata(metadata, location, rentCostVal, depositVal, contract);
+    };
+    reader.readAsDataURL(file);
+    return; // Mint will happen in callback
+  }
+
+  if (!imageValue && !file) {
+    alert("Please upload an image or provide a link.");
     return;
   }
 
-  const reader = new FileReader();
-  const imageLink = document.getElementById("imageLinkInput").value.trim();
-  reader.onloadend = async function () {
-const metadata = {
-  name: name,
-  description: description,
-  image: imageLink
-};
-const tokenURI = "data:application/json;base64," + btoa(JSON.stringify(metadata));
+  // If image link is provided, mint immediately
+  const metadata = {
+    name,
+    description,
+    image: imageValue
+  };
+  await mintWithMetadata(metadata, location, rentCostVal, depositVal, contract);
+}
+
+async function mintWithMetadata(metadata, location, rentCostVal, depositVal, contract) {
+  const tokenURI = "data:application/json;base64," + btoa(JSON.stringify(metadata));
 
     try {
       // Mint NFT (location, rentPrice, deposit, tokenURI)
