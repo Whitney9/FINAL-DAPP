@@ -809,18 +809,34 @@ async function signLease({ tokenId = 0, rentalPeriod = 1 } = {}) {
     const endDate = new Date(now.getTime() + rentalPeriod * 24 * 60 * 60 * 1000)
                       .toISOString().slice(0, 10);
 
-    const newLease = {
-      roomType: property.location,
-      startDate,
-      endDate,
-      price: ethers.utils.formatEther(property.rentPrice) + " ETH / night",
-      status: "In progress",
-      image: "../images/hotel3.jpg"
-    };
-    let rentals = JSON.parse(localStorage.getItem("rentalHistory")) || [];
-    rentals.push(newLease);
-    localStorage.setItem("rentalHistory", JSON.stringify(rentals));
-    window.location.href = "../DataHistory/datahistory.html";
+const tokenUri = await contract.tokenURI(tokenId);
+
+// If tokenURI is a data URL (base64-encoded JSON), decode it:
+let metadata = {};
+if (tokenUri.startsWith("data:application/json;base64,")) {
+  const base64Data = tokenUri.replace("data:application/json;base64,", "");
+  const jsonString = atob(base64Data);
+  metadata = JSON.parse(jsonString);
+} else {
+  // If tokenURI is an HTTP(S) URL, fetch the JSON from there
+  const response = await fetch(tokenUri);
+  metadata = await response.json();
+}
+
+const newLease = {
+  roomType: metadata.name || property.location,
+  description: metadata.description || "",
+  startDate,
+  endDate,
+  price: ethers.utils.formatEther(property.rentPrice) + " ETH / night",
+  status: "In progress",
+  image: metadata.image || "../images/test.jpg"
+};
+
+let rentals = JSON.parse(localStorage.getItem("rentalHistory")) || [];
+rentals.push(newLease);
+localStorage.setItem("rentalHistory", JSON.stringify(rentals));
+window.location.href = "../DataHistory/datahistory.html";
 
   } catch (err) {
     console.error(err);
@@ -834,7 +850,7 @@ window.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", function () {
       // Get tokenId from the data attribute
       const tokenId = parseInt(this.getAttribute("data-tokenid"), 10);
-      const rentalPeriod = 1; // or prompt user for rental period
+      const rentalPeriod = 1;
       signLease({ tokenId, rentalPeriod });
     });
   });
